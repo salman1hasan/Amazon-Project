@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Salman Hasan 
+11/16/2022 
+ 
+New Amazona Project 
+Ran into some errors with the old one, so I thought I'd try to make a new one 
+ 
+1.NPX Create react app 
+2.Next-Amazona 
+3.Add ES.LINT 
+4. Add all dependencies needed as well 
+5.NPM Run dev 
+6.Install NPM Material UI 
+Ran into an error here but I fixed it with a fix-the-upstream-dependency 
+https://stackoverflow.com/questions/64936044/fix-the-upstream-dependency-conflict-installing-npm-packages 
+ 
+7.Delete everything from the Index.js 
+<Layout> 
+<h1> 
+<ul> 
+	<li>   </li> 
+	<li>   </li> 
+	<li>   </li> 
+</ul> 
+</h1> 
+</Layout> 
+ 
+8. Components and add a layout file  
+Ran into an error with React 
+https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-next-babel 
+9. RFC and create a file and import a header and import amazona 
+10. <title>Next Amazona</title> 
+11.App bar”Position” -Static 
+12.Import App bar and tool bar 
+13.Toolbar and typography 
+14.Add Container and add children Container {Children} 
+15.Import children  
+16. Add footer and add ALL RIGHTS RESERVED to the footer.  
+ 
+ 
