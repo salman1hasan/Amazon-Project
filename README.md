@@ -77,3 +77,57 @@ Add styles to app
 12.Go to styles for footer and set textAlign: ‘center 
 13. Go to footer and classname and set it = classes.footer 
 
+Fixing the material UI SSR issue 
+1. Go to useEffect(()=> { 
+		const jssStyles = document.querySelector(‘#jss-server-site’) 
+},[]); 
+2. If this condition exists{ 
+just remove it. 
+3. useEffect(() => { 
+const jssStyles = document.querySelector('#jss-server-side'); 
+if (jssStyles) { 
+jssStyles.parentElement.removeChild(jssStyles); 
+} 
+}, []); 
+ 
+4. Make an _document.js in the pages file, this changes the way our pages render using next.js 
+5. Export default class MyDocument extends Document {} 
+6. Have to import document from ‘next/document’ 
+7. Return ( <html> which imports to ‘next/document’ 
+8. render() { 
+return ( 
+<Html lang="en"> 
+<Head></Head> 
+<body> 
+<Main /> 
+<NextScript /> 
+</body> 
+</Html> 
+); 
+} 
+} 
+9.Inside the body section going to render the main and nextscript 
+10.Next step is going to be initializing get initial props 
+11. MyDocument.getInitialProps = async (ctx) => { 
+const sheets = new ServerStyleSheets(); 
+const originalRenderPage = ctx.renderPage; 
+ctx.renderPage = () => { 
+return originalRenderPage({ 
+enhanceApp: (App) => (props) => sheets.collect(<App {...props} />), 
+}); 
+}; 
+const initialProps = await Document.getInitialProps(ctx); 
+return { 
+...initialProps, 
+styles: [ 
+...React.Children.toArray(initialProps.styles), 
+sheets.getStyleElement(), 
+], 
+}; 
+}; 
+12.Import serverstylesshets which comes from materialui core 
+13.Get originalrenderpage from ctx render.page and change render page function 
+14.ctx.renderpage = call original is an object with enhanceapp accepts app as a parameter, which returns props as another function and add sheets.collect and return the app with props as a parameter 
+15.Const initialProps = await document.getinitialprops(ctx) 
+16.All elements need to be returned in initial props and have to add styles 
+17.Add react children.toArray and add initialprops and sheets.get style element();
