@@ -21,16 +21,6 @@ Ran into an error here but I fixed it with a fix-the-upstream-dependency
 https://stackoverflow.com/questions/64936044/fix-the-upstream-dependency-conflict-installing-npm-packages 
  
 7.Delete everything from the Index.js 
-<Layout> 
-<h1> 
-<ul> 
-	<li>   </li> 
-	<li>   </li> 
-	<li>   </li> 
-</ul> 
-</h1> 
-</Layout> 
- 
 8. Components and add a layout file  
 Ran into an error with React 
 https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-next-babel 
@@ -41,8 +31,7 @@ https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-ne
 13.Toolbar and typography 
 14.Add Container and add children Container {Children} 
 15.Import children  
-16. 
-1. Add footer and add ALL RIGHTS RESERVED to the footer.  
+16.Add footer and add ALL RIGHTS RESERVED to the footer.  
  
 Add styles to app 
 1.Add styles to our amazona project 
@@ -98,7 +87,9 @@ return (
 } 
 } 
 9.Inside the body section going to render the main and nextscript 
+
 10.Next step is going to be initializing get initial props 
+
 11. MyDocument.getInitialProps = async (ctx) => { 
 const sheets = new ServerStyleSheets(); 
 const originalRenderPage = ctx.renderPage; 
@@ -116,11 +107,25 @@ sheets.getStyleElement(),
 ], 
 }; 
 }; 
+
+
+
+
 12.Import serverstylesshets which comes from materialui core 
+
+
 13.Get originalrenderpage from ctx render.page and change render page function 
+
+
 14.ctx.renderpage = call original is an object with enhanceapp accepts app as a parameter, which returns props as another function and add sheets.collect and return the app with props as a parameter 
+
+
 15.Const initialProps = await document.getinitialprops(ctx) 
+
+
 16.All elements need to be returned in initial props and have to add styles 
+
+
 17.Add react children.toArray and add initialprops and sheets.get style element(); 
  
  
