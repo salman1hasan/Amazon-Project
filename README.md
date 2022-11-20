@@ -163,5 +163,28 @@ sheets.getStyleElement(),
  
  
  
+1.Import NextLink from nextjs(Ignore this though because wrapping it around Link for some reason causes an error and I don’t know why hes wrapping nextlink and link, as this is causing a hydration error. (This might become an issue later but at the moment it isn’t) 
+ 
+2.if you add it then it will be converted as href 
+ 
+3.Go to classname and add brand and then from there add brand styling  
+<Typography className={classes.brand}>amazona</Typography> 
+ 
+4.Go to classname and add brand and then from there add brand styling  
+navbar: { 
+backgroundColor: '#203040', 
+'& a': { 
+color: '#ffffff', 
+marginLeft: 10, 
+}, 
+}, 
+brand: { 
+fontweight: 'bold', 
+fontSize: '1.5rem', 
+}, 
+ 
+5.Add a flexgrow to 1 and then add link href of cart and login, again the issue is nextlink and wrapping link maybe its my server or something. 
+
+ 
  
  
