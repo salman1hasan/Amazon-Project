@@ -185,6 +185,33 @@ fontSize: '1.5rem',
  
 5.Add a flexgrow to 1 and then add link href of cart and login, again the issue is nextlink and wrapping link maybe its my server or something. 
 
+Route Product Page
+Route Product Page 
+ 
+1.Nextlink and wrap the card action area 
+
+2.set href to product slug and pass href <NextLink href={`/product/${product.slug}`} passHref> 
+
+3.Nextlink and wrap the card action area 
+
+4. Go to data.js in the utils folder and for each product set the slug 
+
+5. Free-shirt 
+
+6. Create a product folder and then from there create [slug] for dynamic routing 
+
+7.Import React and import router and change slug to product screen 
+
+8. Const router = useRouter(); 
+
+9. Const {slug}= data.products.find(a=> a.slug===slug); 
+
+10.If(!product){ 
+return <div>Product Not Found</div> 
+
+11. Return <div> <h1>{product.name}</h1></div> 
+
+
  
  
  
