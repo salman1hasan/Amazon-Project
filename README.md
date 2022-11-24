@@ -211,6 +211,68 @@ return <div>Product Not Found</div>
 
 11. Return <div> <h1>{product.name}</h1></div> 
 
+ 
+Build Product Page 
+1.Open slug in product folder and add <Layout> form components folder 
+ 
+2. Import Layout from components 
+ 
+3.<Layout title={product.name}> 
+ 
+4. <Layout title={product.name}> 
+ 
+5.NextLink from ‘next/link’ 
+ 
+6. Head and use it in the title section of <Head><title>Next Amazona</title> 
+ 
+7. Create curly brackets {title ? `${title}-Next Amazona` : ‘Next Amazona’} title 
+ 
+8. Add href = passhref=”” 
+ 
+9.Div className={classes.section}> 
+ 
+10. Const classes = useStyles from utils.styles 
+ 
+11.Go to styles.js and go to section and for section for marginTop:10px, marginBottom:10px 
+ 
+12. Grid container spacing={1}> and import grid 
+ 
+13. Inside the grid define another grid and grid item md=6 
+ 
+14. Add Image src={product. Image} set alternative text set with to width={64} 
+ 
+15. Set layout to responsive  
+ 
+16. Import Image from ‘next/image’ 
+ 
+17.Import grid item md={3} xs={12}> <List></List></Grid>  
+<ListItem>  
+ 
+18. Set Category={product. Category} and add Category brand and Category Rating 
+ 
+19.<ListItem>Description: </ListItem> 
+ 
+20.Import typography from material ui<Grid> 
+ 
+21.Wrap all items in typography 
+ 
+22.Add a grid item={md} xs={12} and add <Card></Card> 
+ 
+23.And we’re going to create a border around it 
+ 
+24.Import card and then import <List> and a <ListItem></Listitem> and add <Grid container> and add <Grid item> and add price product.price 
+ 
+25.Set item xs={6} and then create another one grid item xs={6} 
+ 
+26.Add countinstock>0 available and unavailable 
+ 
+27.Add a button and then add another button 
+ 
+28.Add styling fullwidth variant color to add to cart 
+ 
+29.Go to footer and add margintop:10 
+ 
+30.Add description and meta tag to title and add a h1 tag 
 
  
  
