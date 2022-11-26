@@ -274,6 +274,44 @@ Build Product Page
  
 30.Add description and meta tag to title and add a h1 tag 
 
- 
- 
+Add Material Ui to our project
+
+1.Add const theme = createMuiTheme
+
+2.Add createMuiTheme into material-ui/core
+
+3.Typography:{
+h1:{
+	fontSize:'1.6rem',
+	fontWeight:400,
+	margin: '1rem 0'
+}
+h2:{
+	fontSize:'1.4rem',
+	fontWeight:400,
+	margin: '1rem 0'
+},
+}
+
+4. Add ThemeProvider theme={theme}
+
+5.<CssBaseline/>
+
+6.Add a slug and add a variant 
+
+7. Add Head and add Head  <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+
+8.palette: {
+      type: 'light',
+      primary: {
+        main: '#f0c000',
+      },
+      secondary: {
+        main: '#208080',
+      },
+    },
+
  
