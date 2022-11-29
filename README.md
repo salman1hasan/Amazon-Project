@@ -314,4 +314,52 @@ h2:{
       },
     },
 
+9.Import { createContext,useReducer} from "react"
+
+10.export const store =  {createContext}
+
+11.const InitialState ={
+darkMode: false
+}
+
+12.Export function StoreProvider(props){
+const[state,dispatch] = useReducer(reducer,initialstate)
+
+13.Add eslint reccomended
+
+14.  const [state, dispatch] = useReducer(reducer, initialState);
+
+15.function reducer(state, action) { 
+  switch (action.type) {
+    case 'DARK_MODE_ON':
+      return { ...state, darkMode: true };
+    case 'DARK_MODE_OFF':
+      return { ...state, darkMode: false };
+    default:
+      return state;
+  }
+}
+
+16.Layout const {state,dispatch} = useContext()
+
+17.Import {store} from '../utils/store'
+
+18. type: darkMode ? 'dark' : 'light',
+
+19.Set the darkmode to true.
+
+20. Add a Layoutjs Switch checked={darkmode} onChange={darkmodechallenger}
+
+21.Const darkmodechangehandler dispatch type darkmode  dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
+
+22.Install NPM install cookie
+
+23. Const newDarkMode= !darkmode
+
+24.Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
+
+25.darkMode: Cookies.get('darkMode') === 'ON' ? true : false,
+
+
+
  
