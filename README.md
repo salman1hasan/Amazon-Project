@@ -361,6 +361,53 @@ const[state,dispatch] = useReducer(reducer,initialstate)
 
 17.darkMode: Cookies.get('darkMode') === 'ON' ? true : false,
 
+Connect Mongodb
+1.NPM install mongoose
+
+2.Import const connection={}
+
+3.Add async function() {
+if(connection.isConnected){
+console.log('already connected')
+return;
+}
+
+4.Env, browser = true, node=true
+
+5.if(connection.isConnected){
+console.log('already connected')
+return;
+}
+
+6.if(mongoose.connections.length>0){
+connection.isConnected= mongoose.connections[0].readyState
+if(connected.isConnected===1){
+console.log(use previous connection)
+return 
+}
+
+7. Await mongoose.disconnect
+
+8.const db = await mongoose.connect(process.env.MONGODB_URI); //this sets the connection
+  console.log('new connection');
+  connection.isConnected = db.connections[0].readyState;
+}
+
+9.async function disconnect() {
+  if (connection.isConnected) {
+    if (process.env.NODE_ENV === 'production') {
+      await mongoose.disconnect();
+      connection.isConnected = false;
+    } else {
+      console.log('not disconnected');
+    }
+  }
+}
+
+
+10. Add env file and connect it to mongodb
+
+11.Check the env file with the hello
 
 
  
