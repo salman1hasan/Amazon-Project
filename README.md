@@ -410,4 +410,77 @@ return
 11.Check the env file with the hello
 
 
- 
+ Building out Product API
+
+1.Product.js has a mongoose and adds mongoose then from there we add all the categories that are necessary
+
+import mongoose from 'mongoose';
+
+const productSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    slug: { type: String, required: true, unique: true },
+    category: { type: String, required: true },
+    image: { type: String, required: true },
+    price: { type: Number, required: true },
+    brand: { type: String, required: true },
+    rating: { type: Number, required: true, default: 0 },
+    numReviews: { type: Number, required: true, default: 0 },
+    countInStock: { type: Number, required: true, default: 0 },
+    description: { type: String, required: true },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+2.
+const Product =
+  mongoose.models.Product || mongoose.model('Product', productSchema);
+export default Product;
+
+3.Creates a new sentence letter and from there you can add mongoose.models.product or the mongoose.model
+
+4.Download next-connect
+
+5.Create a handler =nc(), while importing db from '../utils/db'
+
+6 Import import nc from 'next-connect';
+import Product from '../../../models/Product';
+import db from '../../../utils/db';
+
+const handler = nc();
+
+handler.get(async (req, res) => {
+  await db.connect();  
+  const products = await Product.find({});
+  await db.disconnect();
+  res.send(products);
+});
+
+export default handler;
+
+//this is used to connect the database
+
+7.Copy the whole index.js and import it to the seed part
+
+8. When I get to the seed from there make changes to the seed
+
+9.import nc from 'next-connect';
+import Product from '../../models/Product';
+import db from '../../utils/db';
+import data from '../../utils/data';
+
+const handler = nc();
+
+handler.get(async (req, res) => {
+  await db.connect();
+  await Product.deleteMany();
+  await Product.insertMany(data.products);
+  await db.disconnect();
+  res.send({ message: 'seeded successfully' });
+});
+
+export default handler;
+
+10.Big thing is to make sure the mongodb database is succesfully connected and readandwrite is used in your username. Other than that self explanatory section as we're using nextjs syntax to connect a database
