@@ -484,3 +484,58 @@ handler.get(async (req, res) => {
 export default handler;
 
 10.Big thing is to make sure the mongodb database is succesfully connected and readandwrite is used in your username. Other than that self explanatory section as we're using nextjs syntax to connect a database
+
+Getting data from the mongodb instead
+1.export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find({}).lean();
+  await db.disconnect();
+  return {
+    props: {
+      products: products.map(db.convertDocToObj),
+    },
+  };
+}
+
+use getserversideprops
+
+2.Import product from '../models/product'
+
+3.Props and const {products} = prop
+
+4.get the props from the  {products.map((product) => (
+            <Grid item md={4} key={product.name}>
+
+rather than before from data.map
+
+5.Import lean then import function convert to doc 
+
+6.function convertDocToObj(doc) {
+  doc._id = doc._id.toString();
+  doc.createdAt = doc.createdAt.toString();
+  doc.updatedAt = doc.updatedAt.toString();
+  return doc;
+}
+
+7.go to slug converts it to js
+
+export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find({}).lean();
+  await db.disconnect();
+  return {
+    props: {
+      products: products.map(db.convertDocToObj),
+    },
+  };
+}
+
+8. add params= context
+
+9.And import slug{}
+
+10.findone{slug}
+
+11.const product{slug}
+
+12.convert change product: db.covert to obj(product)
