@@ -17,7 +17,7 @@ async function connect() {
     await mongoose.disconnect();
   }
   const db = await mongoose.connect(
-    'mongodb+srv://salmanhasan:salmanhasan@cluster0.mabf423.mongodb.net/?retryWrites=true&w=majority'
+    (process.env.MONGODB_URI);
   );
   console.log('new connection');
   connection.isConnected = db.connections[0].readyState;
