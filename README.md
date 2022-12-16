@@ -1,14 +1,7 @@
 Salman Hasan 
 11/16/2022 
  
-New Amazona Project 
-Ran into some errors with the old one, so I thought I'd try to make a new one 
- 
-Important notes when I make the project better 
-Material UI is being used for this project, in my previous project I used NextJS and SCSS which was good. I added a customized navbar with scss styles, material ui can be used with it as well. 
- 
-Implement custom navigation bar the way I had it and import it into the Layout file 
- 
+
 Create Next App 
 Section 1-Create Next App 
 1.NPX Create react app 
