@@ -532,3 +532,102 @@ export async function getServerSideProps() {
 11.const product{slug}
 
 12.convert change product: db.covert to obj(product)
+
+Installing the authentication 
+
+1.NPM I next-auth 
+2.Create a file [...nextauth] and import next[auth] 
+3.Import export default nextAuth({ 
+	session:{ 
+	strategy: ‘jwt’, // 
+}, 
+callbacks:{ 
+	        async jwt({ token, user}){ 
+		if(user?._id) token._id = user._id; 
+              if(user?.isAdmin) token.isAdmin = user.isAdmin; 
+	return token; 
+          } 
+async session({ session, token}){ 
+      if(token?._id) session.user._id = token._id; 
+      if(token?.isAdmin) session.user.isAdmin = token.isAdmin; 
+      return session; 
+  } , 
+}, 
+providers: [ 
+	CredentialsProvider({ 
+			async authorize(credentials){ 
+				await db.connect(); 
+			         const user = await User.findOne({ 
+				email:credentials.email, 
+			}); 
+			await db.disconnect(); 
+			if(user && bcryptjs.compareSync(credentials.password,user.password)){ 
+			return { 
+			_id: user._id, 
+			         name: user.name, 
+			email:user.email, 
+			   image: ‘f’, 
+			      isAdmin: user.isAdmin, 
+}; 
+} 
+throw new Error(‘Invalid email or password’) 
+} 
+}) 
+ 
+providers:{ 
+} 
+} 
+ 
+4. Go to the submit handler in login js and get the try and catch error const result = await signIn(‘credential) 
+rediect:false, 
+email, 
+password, 
+}); 
+catch(err){ 
+} 
+ 
+5.Catch(err){ 
+toast.error(getError(err)); 
+} 
+ 
+6.Add utils and add error.js 
+ 
+const getError = (err) => 
+
+err.response && err.response.data && err.response.data.message 
+
+? err.response.data.message 
+
+: err.message; 
+
+ 
+ 
+
+export { getError }; 
+ 
+7. Go to login JS add toast error and install npm I react-toastify 
+ 
+8.Import {toast container}  and install {toast} 
+ 
+9.Const {data : session} = useSession(); 
+ 
+10. useEffect(() => { 
+
+if (session?.user) { 
+
+router.push(redirect || '/'); 
+
+} 
+
+}, [router, session, redirect]); 
+ 
+11. Have to import use session from next-auth/react 
+ 
+12.Then go to app.js and then go to session provider session={session} 
+ 
+13. function MyApp({ Component, pageProps: { session, ...pageProps } }) { 
+ 
+14. Import session  
+const { status, data: session } = useSession(); 
+ 
+15.Show user name and show the login and import react-toastify/React toastify
